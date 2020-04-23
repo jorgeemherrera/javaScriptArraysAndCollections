@@ -39,6 +39,13 @@ function findOver1000() {
     alert(firstThousand);
 }
 
+// Array.fill
+
+function resetTo0() {
+    monthlySales.fill(0);
+    monthlySalesChart.update();
+}
+
 // Bar
 var monthlySalesChart = new Chart(ctx, {
   type: 'bar',
