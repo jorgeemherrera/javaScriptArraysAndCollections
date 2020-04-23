@@ -6,7 +6,7 @@ let pieCtx = document.getElementById('deptSales').getContext('2d');
 let yearlyLabel = document.getElementById('yearlyTotal');
 
 let monthlyLabels = Array.of('Oct','Nov','Dec', 'Jan');
-let monthlySales = Array.of(500,900,300,400);
+let monthlySales = Array.of(500,750,3000,400);
 
 let deptSales = Array.of(12,9,3,2);
 let deptLabels = Array.of('Hiking', 'Running', 'Hunting', 'Soccer');
@@ -31,6 +31,13 @@ alert(addYearlyTotal(...totalNums));
 
 let yearlyTotal = addYearlyTotal(...monthlySales);
 yearlyLabel.innerHTML = `$ ${yearlyTotal}`
+
+// Array.find()
+
+function findOver1000() {
+    let firstThousand = monthlySales.find(element => element > 1000);
+    alert(firstThousand);
+}
 
 // Bar
 var monthlySalesChart = new Chart(ctx, {
