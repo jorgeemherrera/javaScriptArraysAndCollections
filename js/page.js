@@ -6,30 +6,33 @@ let pieCtx = document.getElementById('deptSales').getContext('2d');
 let yearlyLabel = document.getElementById('yearlyTotal');
 
 let monthlyLabels = Array.of('Oct','Nov','Dec', 'Jan');
-let monthlySales = Array.of(500,750,3000,400);
+let monthlySales = Array.of(500,750,3000,400,6700);
 
 let deptSales = Array.of(12,9,3,2);
 let deptLabels = Array.of('Hiking', 'Running', 'Hunting', 'Soccer');
 
-function addYearlyTotal(a,b,c,d) {
-    return a+b+c+d;
+let yearlyTotal = 0;
+
+// Iterating through Array of montlySales and adding in forEach
+function addYearlyTotal(x) {
+    yearlyTotal = x + yearlyTotal;
 }
+
+monthlySales.forEach(addYearlyTotal);
 
 let octNums = Array.of(1200,1000,9000,7896);
 let novNums = Array.of(1000,860,6530,1256);
 let decNums = Array.of(857,320,1023,987);
 let janNums = Array.of(1250,854,8795,675);
 
-let totalNums = Array.of(
-    addYearlyTotal(...octNums),
-    addYearlyTotal(...novNums),
-    addYearlyTotal(...decNums), 
-    addYearlyTotal(...janNums)
-    );
-alert(addYearlyTotal(...totalNums));
+// let totalNums = Array.of(
+//     addYearlyTotal(...octNums),
+//     addYearlyTotal(...novNums),
+//     addYearlyTotal(...decNums), 
+//     addYearlyTotal(...janNums)
+//     );
+// alert(addYearlyTotal(...totalNums));
 
-
-let yearlyTotal = addYearlyTotal(...monthlySales);
 yearlyLabel.innerHTML = `$ ${yearlyTotal}`
 
 // Array.find()
