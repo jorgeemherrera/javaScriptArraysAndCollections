@@ -14,12 +14,23 @@ let deptLabels = Array.of('Hiking', 'Running', 'Hunting', 'Soccer');
 let newAmount = document.getElementById('itemAmount');
 let newMonth = document.getElementById('monthId');
 
+let basketBallRadio = document.getElementById('basketBallRadio');
+let baseBallRadio = document.getElementById('baseBallRadio');
+let swimmingRadio = document.getElementById('swimmingRadio');
+
 let yearlyTotal = 0;
 
 // Adding and Removing Values from Sets
 
 const monthlySales = new Set();
 const monthlyLabels = new Set();
+
+// WeakSet
+const categories = new WeakSet();
+
+let basket =    { category: 'Basketball' };
+let baseball =  { category: 'Baseball' };
+let swimming =  { category: 'Swimming' };
 
 function addSale() {
     // Add to a Set
@@ -47,6 +58,19 @@ function addSale() {
     monthlySalesChart.data.labels = Array.from(monthlyLabels);
 
     monthlySalesChart.update();
+
+    if (basketBallRadio.checked) {
+        categories.add(basket);
+    } else if (baseBallRadio.checked) {
+        categories.add(baseball)
+    } else if (swimmingRadio.checked) {
+        categories.add(swimming)
+    } else {
+        // Do somethig else
+    }
+
+    console.log('Categories: ', categories);
+    
 }
 
 function deleteVal() {
