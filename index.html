@@ -60,11 +60,16 @@
 	<div class="container py-3">
 		<div class="d-flex flex-row justify-content-between pb-3">
 			<h3>Recent Sales</h3>
+			<button type="button" class="btn btn-outline-success"><span
+				class="oi oi-plus pr-2" onclick="deleteVal()"></span>Delete Set</button>
 				<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal"><span
 				class="oi oi-plus pr-2"></span>Add Sale</button>
 
 				<button type="button" class="btn btn-outline-success" onclick="findOver1000()"><span
 				class="oi oi-plus pr-2"></span>Find over $1000</button>
+
+				<button type="button" class="btn btn-outline-success" onclick="addTotal()"><span
+					class="oi oi-plus pr-2"></span>add Total</button>
 
 				<button type="button" class="btn btn-outline-success" onclick="resetTo0()"><span
 				class="oi oi-plus pr-2"></span>Reset to 0</button>
@@ -92,9 +97,14 @@
 					</div>
 					<div class="modal-body">
 						<form>
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label for="exampleInputEmail1"><small class="text-muted">Customer Name:</small></label>
 								<input type="email" class="form-control" id="exampleInputEmail1"
+									aria-describedby="emailHelp" placeholder="Enter name">
+							</div> -->
+							<div class="form-group">
+								<label for="monthId"><small class="text-muted">Month:</small></label>
+								<input type="email" class="form-control" id="monthId"
 									aria-describedby="emailHelp" placeholder="Enter name">
 							</div>
 							<div class="form-group">
@@ -124,7 +134,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Add Sale</button>
+						<button type="button" class="btn btn-primary" onclick="addSale()">Add Sale</button>
 					</div>
 				</div>
 			</div>
