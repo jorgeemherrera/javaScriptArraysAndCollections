@@ -39,7 +39,7 @@ function addSale() {
     dataset.data = [];
   });
 
-  // add 
+  // Iterating through a Map() 
 
   for (let amount of monthlySales.values()) {
     yearlyTotal = amount + yearlyTotal;
