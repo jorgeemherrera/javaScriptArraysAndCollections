@@ -22,6 +22,18 @@ let yearlyTotal = 0;
 
 const monthlySales = new Map();
 
+// WeakMap
+{
+  let salesA = {
+    a: [1, 2]
+  }
+  var map = new WeakMap();
+  map.set(salesA, 'Swimming');
+  console.log('First ', salesA)
+}
+
+console.log('Second ', salesA)
+
 // Add
 
 function addSale() {
